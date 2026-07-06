@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>La Chambre de Marin | Gîte de Charme avec Spa & Piscine à Lombers</title>
+    <meta name="description" content="Évadez-vous à La Chambre de Marin à Lombers. Un havre de paix absolu à la campagne avec piscine, spa privatif et vue magnifique. Réservation directe au meilleur prix.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BedAndBreakfast",
+      "name": "La Chambre de Marin",
+      "description": "Chambre d'hôte et gîte de charme à la campagne avec piscine, spa et vue panoramique.",
+      "image": "https://www.votredomaine.fr/photos/vue.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lombers",
+        "addressRegion": "Tarn",
+        "addressCountry": "FR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "10",
+        "bestRating": "10",
+        "reviewCount": "21"
+      }
+    }
+    </script>
+
+    <style>
+        /* --- VARIABLES DE DESIGN PRESTIGE --- */
+        :root {
+            --font-titles: 'Playfair Display', Georgia, serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --color-bg: #fbf9f6;         /* Crème/Sable doux */
+            --color-nature: #3a4d39;     /* Vert sauge profond */
+            --color-gold: #c5a880;       /* Or mat pour le Spa/Prestige */
+            --color-dark: #242924;       /* Anthracite doux pour le texte */
+            --color-white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--color-bg); 
+            color: var(--color-dark); 
+            font-family: var(--font-body);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- DIAPORAMA DE L'ENTÊTE (HERO) --- */
+        .hero {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--color-white);
+            padding: 20px;
+            background-color: #1a1f1a;
+            overflow: hidden;
+        }
+        .hero-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+        .slide {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover; background-position: center;
+            opacity: 0; transition: opacity 2s ease-in-out;
+        }
+        .slide.active { opacity: 0.55; } /* Assombrit légèrement pour détacher le texte */
+
+        .hero-content { position: relative; z-index: 1; max-width: 800px; }
+        .hero h1 { font-family: var(--font-titles); font-size: 4rem; font-weight: 400; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.3rem; font-weight: 300; margin-bottom: 35px; letter-spacing: 0.5px; text-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+
+        /* --- BADGE NOTE 10/10 ÉLÉGANT --- */
+        .premium-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--color-dark);
+            padding: 10px 22px;
+            border-radius: 50px;
+            margin-bottom: 35px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border: 1px solid var(--color-gold);
+        }
+        .premium-badge .score {
+            background: var(--color-nature);
+            color: var(--color-white);
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 25px;
+        }
+        .premium-badge .text { font-size: 0.95rem; text-align: left; font-weight: 600; letter-spacing: 0.3px;}
+
+        /* --- BOUTON DE RÉSERVATION DIRECTE --- */
+        .btn-gold {
+            background-color: var(--color-gold);
+            color: var(--color-white);
+            padding: 16px 45px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.4);
+        }
+        .btn-gold:hover { background-color: #b3946b; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(197, 168, 128, 0.6); }
+
+        /* --- SECTION EXPÉRIENCE (PISCINE, SPA, VUE) --- */
+        .section-intro { padding: 90px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
+        .section-intro h2 { font-family: var(--font-titles); font-size: 2.8rem; color: var(--color-nature); font-weight: 400; margin-bottom: 20px; }
+        .section-intro .subtitle { font-size: 1.1rem; color: #666; font-style: italic; margin-bottom: 50px; }
+
+        .grid-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+        }
+        .feature-card {
+            background: var(--color-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
+        }
+        .feature-card:hover { transform: translateY(-5px); }
+        .feature-img { height: 220px; width: 100%; background-size: cover; background-position: center; }
+        .feature-info { padding: 25px; text-align: left; }
+        .feature-info h3 { font-family: var(--font-titles); font-size: 1.4rem; color: var(--color-nature); margin-bottom: 10px; font-weight: 400;}
+        .feature-info p { font-size: 0.95rem; color: #555; }
+
+        /* --- SECTION AVIS CLIENTS FLUIDE --- */
+        .reviews-section { padding: 80px 0; background: var(--color-white); overflow: hidden; border-top: 1px solid #f0edf6; }
+        .reviews-section h2 { text-align: center; font-family: var(--font-titles); font-size: 2.5rem; color: var(--color-nature); margin-bottom: 40px; font-weight: 400;}
+        
+        .marquee-container { width: 100%; overflow: hidden; position: relative; display: flex; }
+        .marquee-container::before, .marquee-container::after { content: ""; position: absolute; top: 0; width: 150px; height: 100%; z-index: 2; }
+        .marquee-container::before { left: 0; background: linear-gradient(to right, var(--color-white), transparent); }
+        .marquee-container::after { right: 0; background: linear-gradient(to left, var(--color-white), transparent); }
+
+        .marquee-content { display: flex; gap: 30px; animation: scroll 45s linear infinite; }
+        .marquee-content:hover { animation-play-state: paused; }
+
+        .review-card {
+            background: var(--color-bg); border-radius: 4px; padding: 30px;
+            width: 420px; box-shrink: 0; border-left: 3px solid var(--color-gold);
+        }
+        .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .reviewer-name { font-weight: 600; font-size: 1rem; }
+        .review-score { color: var(--color-gold); font-weight: 600; font-size: 1.1rem; letter-spacing: 1px; }
+        .review-text { font-style: italic; color: #444; font-size: 0.95rem; }
+
+        /* --- SECTION RÉSERVATION --- */
+        .booking-section { padding: 90px 20px; text-align: center; background: var(--color-bg); }
+        .booking-section h2 { font-family: var(--font-titles); font-size: 2.5rem; color: var(--color-nature); margin-bottom: 15px; font-weight: 400; }
+        .booking-section p { margin-bottom: 40px; color: #555; }
+        .booking-wrapper {
+            max-width: 950px; margin: 0 auto; background: var(--color-white); 
+            padding: 30px; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+            border: 1px solid #ebdcd0;
+        }
+
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.6rem; }
+            .hero p { font-size: 1.1rem; }
+            .section-intro h2, .reviews-section h2, .booking-section h2 { font-size: 2rem; }
+            .review-card { width: 310px; padding: 20px; }
+        }
+        #apartmentIframe3411556 {
+            width: 100%;
+            min-height: 550px; /* Donne suffisamment d'espace vertical pour le calendrier */
+            display: block;
+        }
+        
+        #apartmentIframe3411556 iframe {
+            width: 100% !important;
+            min-height: 550px !important;
+            border: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <section class="hero">
+            <div class="hero-slideshow" id="slideshow">
+                </div>
+
+            <div class="hero-content">
+                <div class="premium-badge">
+                    <div class="score">10</div>
+                    <div class="text">NOTE EXCEPTIONNELLE<br><span>Basé sur nos 21 avis Booking.com</span></div>
+                </div>
+                <h1>La Chambre de Marin</h1>
+                <p>Une parenthèse enchantée au cœur de la campagne de Lombers</p>
+                <a href="#reservation" class="btn-gold">RÉSERVER EN DIRECT</a>
+            </div>
+        </section>
+
+        <section class="section-intro">
+            <h2>Une invitation à la déconnexion</h2>
+            <p class="subtitle">Découvrez le gîte chaleureux de Séverine et Cyril</p>
+
+            <div class="grid-features">
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('photos/vue.jpg');"></div>
+                    <div class="feature-info">
+                        <h3>Vue Magnifique</h3>
+                        <p>Prenez de la hauteur et admirez un panorama exceptionnel sur les collines environnantes, idéal pour décompresser.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('photos/piscine.jpg');"></div>
+                    <div class="feature-info">
+                        <h3>La Piscine</h3>
+                        <p>Profitez des belles journées ensoleillées pour plonger ou vous prélasser au bord de notre piscine au calme absolu.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('photos/spa.jpg');"></div>
+                    <div class="feature-info">
+                        <h3>Espace Spa</h3>
+                        <p>Accordez-vous un instant de bien-être absolu et de relaxation profonde grâce à notre spa privatif haut de gamme.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('photos/campagne.jpg');"></div>
+                    <div class="feature-info">
+                        <h3>Campagne Tranquille</h3>
+                        <p>Ici, seul le chant des oiseaux rythme vos journées. Un cadre verdoyant préservé, loin du tumulte citadin.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-section">
+            <h2>Ce que confient nos hôtes</h2>
+            <div class="marquee-container">
+                <div class="marquee-content" id="marquee-content">
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Voyageur Booking</span>
+                            <span class="review-score">★ ★ ★ ★ ★</span>
+                        </div>
+                        <p class="review-text">"Un séjour inoubliable ! J'ai passé un moment exceptionnel chez Cyril et Séverine. L'accueil était chaleureux, la communication fluide et tout était parfaitement organisé. L'hébergement était décoré avec goût."</p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Voyageur Booking</span>
+                            <span class="review-score">★ ★ ★ ★ ★</span>
+                        </div>
+                        <p class="review-text">"Un excellent séjour dans ce gîte chaleureux ! La chambre est très bien agencée, confortable et décorée avec goût, avec une vue magnifique qui invite à la détente. Séverine et Cyril sont des hôtes adorables."</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Voyageur Booking</span>
+                            <span class="review-score">★ ★ ★ ★ ★</span>
+                        </div>
+                        <p class="review-text">"Cyril et Séverine ont été aux petits soins tout au long de mon séjour, toujours disponibles pour donner d'excellent conseils. Tout était parfaitement propre et confortable. On se sent comme chez soi."</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="reservation" class="booking-section">
+            <h2>Sélectionnez vos dates</h2>
+            <p>Meilleur tarif garanti et aucun frais de dossier en réservant directement sur notre site.</p>
+            <div class="booking-wrapper">
+                
+                <div id="apartmentIframe3411556">
+                <script type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+                <script>BookingToolIframe.initialize({"url": "https://login.smoobu.com/fr/booking-tool/iframe/1814371/3411556", "baseUrl": "https://login.smoobu.com", "target": "#apartmentIframe3411556"})</script>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <script>
+        /* --- CONFIGURATION DU DIAPORAMA DE L'ENTÊTE --- */
+        // Modifiez simplement cette liste avec les noms exacts de vos photos du dossier photos/
+        // Par exemple ici, le diaporama va faire tourner la photo de la vue, puis du spa, puis de la piscine
+        const photosHero = [
+            'vue.jpg',
+            'spa.jpg',
+            'piscine.jpg',
+            'campagne.jpg'
+        ];
+        
+        const dossier = 'photos/';
+        const container = document.getElementById('slideshow');
+        let indexActuel = 0;
+
+        // Génération des balises HTML pour les images de fond
+        photosHero.forEach((nomPhoto, index) => {
+            const divImage = document.createElement('div');
+            divImage.classList.add('slide');
+            if (index === 0) divImage.classList.add('active');
+            divImage.style.backgroundImage = `url('${dossier}${nomPhoto}')`;
+            container.appendChild(divImage);
+        });
+
+        // Animation de changement de photo toutes les 5 secondes
+        const lesSlides = document.querySelectorAll('.slide');
+        if (lesSlides.length > 1) {
+            setInterval(() => {
+                lesSlides[indexActuel].classList.remove('active');
+                indexActuel = (indexActuel + 1) % lesSlides.length;
+                lesSlides[indexActuel].classList.add('active');
+            }, 5000);
+        }
+
+        /* --- SCRIPT BOUCLE INFINIE AVIS --- */
+        document.addEventListener("DOMContentLoaded", function() {
+            const marquee = document.getElementById("marquee-content");
+            marquee.innerHTML += marquee.innerHTML; // Duplication automatique pour un défilement infini et fluide
+        });
+    </script>
+</body>
+</html>
