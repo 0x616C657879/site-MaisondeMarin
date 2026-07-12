@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VL93ELTKL3"></script>
     <script>
@@ -11,16 +12,22 @@
         gtag('js', new Date());
         gtag('config', 'G-VL93ELTKL3');
     </script>
-    
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
-
+        
     <title>La Chambre de Marin | Gîte de Charme avec Spa & Piscine à Lombers</title>
     <meta name="description" content="Évadez-vous à La Chambre de Marin à Lombers. Un havre de paix absolu à la campagne avec piscine, spa privatif et vue magnifique. Réservation directe au meilleur prix.">
     
+    <!-- Polices de caractères -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Lien vers le fichier de style CSS -->
+    <link rel="stylesheet" href="style_test.css">
+    
+    <!-- Script pour le modèle 3D -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
+    <!-- Données structurées SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -42,229 +49,8 @@
       }
     }
     </script>
-
-    <style>
-        /* --- VARIABLES DE DESIGN PRESTIGE --- */
-        :root {
-            --font-titles: 'Playfair Display', Georgia, serif;
-            --font-body: 'Plus Jakarta Sans', sans-serif;
-            --color-bg: #fbf9f6;         /* Crème/Sable doux */
-            --color-nature: #3a4d39;     /* Vert sauge profond */
-            --color-gold: #c5a880;       /* Or mat pour le Spa/Prestige */
-            --color-dark: #242924;       /* Anthracite doux pour le texte */
-            --color-white: #ffffff;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background-color: var(--color-bg); 
-            color: var(--color-dark); 
-            font-family: var(--font-body);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* --- DIAPORAMA DE L'ENTÊTE (HERO) --- */
-        .hero {
-            position: relative;
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--color-white);
-            padding: 20px;
-            background-color: #1a1f1a;
-            overflow: hidden;
-        }
-        .hero-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
-        .slide {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-size: cover; background-position: center;
-            opacity: 0; transition: opacity 2s ease-in-out;
-        }
-        .slide.active { opacity: 0.55; }
-
-        .hero-content { position: relative; z-index: 1; max-width: 800px; }
-        .hero h1 { font-family: var(--font-titles); font-size: 4rem; font-weight: 400; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-        .hero p { font-size: 1.3rem; font-weight: 300; margin-bottom: 35px; letter-spacing: 0.5px; text-shadow: 0 2px 5px rgba(0,0,0,0.3); }
-
-        /* --- BADGE NOTE 10/10 ÉLÉGANT --- */
-        .premium-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--color-dark);
-            padding: 10px 22px;
-            border-radius: 50px;
-            margin-bottom: 35px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            border: 1px solid var(--color-gold);
-        }
-        .premium-badge .score {
-            background: var(--color-nature);
-            color: var(--color-white);
-            font-size: 1.4rem;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 25px;
-        }
-        .premium-badge .text { font-size: 0.95rem; text-align: left; font-weight: 600; letter-spacing: 0.3px;}
-
-        /* --- BOUTON DE RÉSERVATION DIRECTE --- */
-        .btn-gold {
-            background-color: var(--color-gold);
-            color: var(--color-white);
-            padding: 16px 45px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 4px;
-            letter-spacing: 1px;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.4);
-            display: inline-block;
-        }
-        .btn-gold:hover { background-color: #b3946b; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(197, 168, 128, 0.6); }
-
-        /* --- SECTION EXPÉRIENCE (PISCINE, SPA, VUE) --- */
-        .section-intro { padding: 90px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
-        .section-intro h2 { font-family: var(--font-titles); font-size: 2.8rem; color: var(--color-nature); font-weight: 400; margin-bottom: 20px; }
-        .section-intro .subtitle { font-size: 1.1rem; color: #666; font-style: italic; margin-bottom: 50px; }
-
-        .grid-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto 50px auto;
-            padding: 0 20px;
-        }
-        .feature-card {
-            background: var(--color-white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-            transition: transform 0.3s ease;
-            border: 1px solid #eee;
-        }
-        .feature-card:hover { transform: translateY(-5px); }
-        .feature-img { height: 220px; width: 100%; background-size: cover; background-position: center; background-color: #e9e5df; }
-        .feature-info { padding: 25px; text-align: left; }
-        .feature-info h3 { font-family: var(--font-titles); font-size: 1.4rem; color: var(--color-nature); margin-bottom: 10px; font-weight: 400;}
-        .feature-info p { font-size: 0.95rem; color: #555; }
-
-        /* --- SECTION IMMERSION SPA (AVEC CANVAS BULLES) --- */
-        .spa-immersion {
-            position: relative;
-            width: 100%;
-            height: 75vh;
-            /* IMAGE DE FOND PISCINE : Remplacez par le chemin de votre photo */
-            background-image: url('photos/espace_piscine.jpg'); 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Effet profondeur */
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-        }
-        /* Filtre sombre pour faire ressortir les bulles et le texte blanc */
-        .spa-immersion::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(10, 30, 50, 0.25);
-            z-index: 1;
-        }
-        /* Le Canvas qui génère les bulles */
-        #bubbleCanvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-            pointer-events: none; /* Empêche le canvas de bloquer les clics */
-        }
-        .spa-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            color: var(--color-white);
-            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            padding: 20px;
-        }
-        .spa-content h2 {
-            font-family: var(--font-titles);
-            font-size: 3.5rem;
-            font-weight: 400;
-            margin-bottom: 20px;
-        }
-        .spa-content p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-        }
-
-        /* --- SECTION AVIS CLIENTS FLUIDE --- */
-        .reviews-section { padding: 80px 0; background: var(--color-white); overflow: hidden; border-top: 1px solid #f0edf6; }
-        .reviews-section h2 { text-align: center; font-family: var(--font-titles); font-size: 2.5rem; color: var(--color-nature); margin-bottom: 40px; font-weight: 400;}
-        
-        .marquee-container { width: 100%; overflow: hidden; position: relative; display: flex; }
-        .marquee-container::before, .marquee-container::after { content: ""; position: absolute; top: 0; width: 150px; height: 100%; z-index: 2; }
-        .marquee-container::before { left: 0; background: linear-gradient(to right, var(--color-white), transparent); }
-        .marquee-container::after { right: 0; background: linear-gradient(to left, var(--color-white), transparent); }
-
-        .marquee-content { display: flex; gap: 30px; animation: scroll 45s linear infinite; }
-        .marquee-content:hover { animation-play-state: paused; }
-
-        .review-card {
-            background: var(--color-bg); border-radius: 4px; padding: 30px;
-            width: 420px; flex-shrink: 0; border-left: 3px solid var(--color-gold);
-        }
-        .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .reviewer-name { font-weight: 600; font-size: 1rem; }
-        .review-score { color: var(--color-gold); font-weight: 600; font-size: 1.1rem; letter-spacing: 1px; }
-        .review-text { font-style: italic; color: #444; font-size: 0.95rem; }
-
-        /* --- SECTION RÉSERVATION --- */
-        .booking-section { padding: 90px 20px; text-align: center; background: var(--color-bg); }
-        .booking-section h2 { font-family: var(--font-titles); font-size: 2.5rem; color: var(--color-nature); margin-bottom: 15px; font-weight: 400; }
-        .booking-section p { margin-bottom: 40px; color: #555; }
-        .booking-wrapper {
-            max-width: 950px; margin: 0 auto; background: var(--color-white); 
-            padding: 30px; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.04);
-            border: 1px solid #ebdcd0;
-        }
-
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.6rem; }
-            .hero p { font-size: 1.1rem; }
-            .section-intro h2, .reviews-section h2, .booking-section h2 { font-size: 2rem; }
-            .spa-content h2 { font-size: 2.2rem; }
-            .review-card { width: 310px; padding: 20px; }
-        }
-        #apartmentIframe3411556 {
-            width: 100%;
-            min-height: 550px;
-            display: block;
-        }
-        
-        #apartmentIframe3411556 iframe {
-            width: 100% !important;
-            min-height: 550px !important;
-            border: none !important;
-        }
-    </style>
 </head>
 <body>
-
     <main>
         <section class="hero">
             <div class="hero-slideshow" id="slideshow">
@@ -293,20 +79,24 @@
                         <p>Prenez de la hauteur et admirez un panorama exceptionnel sur les collines environnantes, idéal pour décompresser.</p>
                     </div>
                 </div>
+                
+                <!-- Carte avec le modèle 3D intégré -->
                 <div class="feature-card">
-                    <div class="feature-img" style="background-image: url('photos/piscine.jpg');"></div>
+                    <div class="feature-3d-container">
+                        <model-viewer 
+                            src="3D/pink_flamingo_float_3d_model.glb" 
+                            alt="Bouée Flamant Rose" 
+                            camera-controls 
+                            auto-rotate 
+                            style="width: 100%; height: 100%; background-color: transparent;">
+                        </model-viewer>
+                    </div>
                     <div class="feature-info">
                         <h3>La Piscine</h3>
                         <p>Profitez des belles journées ensoleillées pour plonger ou vous prélasser au bord de notre piscine au calme absolu.</p>
                     </div>
-                    <model-viewer 
-                        src="3D/pink_flamingo_float_3d_model.glb" 
-                        alt="Bouée Flamant Rose" 
-                        camera-controls 
-                        auto-rotate 
-                        style="width: 100%; height: 500px; background-color: transparent;">
-                    </model-viewer>
                 </div>
+
                 <div class="feature-card">
                     <div class="feature-img" style="background-image: url('photos/spa.jpg');"></div>
                     <div class="feature-info">
@@ -324,7 +114,6 @@
             </div>
         </section>
 
-        <!-- NOUVELLE SECTION: IMMERSION SPA AVEC LES BULLES EN CANVAS -->
         <section class="spa-immersion">
             <canvas id="bubbleCanvas"></canvas>
             <div class="spa-content">
@@ -385,137 +174,7 @@
         </footer>
     </main>
 
-    <script>
-        /* --- CONFIGURATION DU DIAPORAMA DE L'ENTÊTE --- */
-        const photosHero = [
-            'vue.jpg',
-            'spa.jpg',
-            'piscine.jpg',
-            'campagne.jpg'
-        ];
-        
-        const dossier = 'photos/';
-        const container = document.getElementById('slideshow');
-        let indexActuel = 0;
-
-        photosHero.forEach((nomPhoto, index) => {
-            const divImage = document.createElement('div');
-            divImage.classList.add('slide');
-            if (index === 0) divImage.classList.add('active');
-            divImage.style.backgroundImage = `url('${dossier}${nomPhoto}')`;
-            container.appendChild(divImage);
-        });
-
-        const lesSlides = document.querySelectorAll('.slide');
-        if (lesSlides.length > 1) {
-            setInterval(() => {
-                lesSlides[indexActuel].classList.remove('active');
-                indexActuel = (indexActuel + 1) % lesSlides.length;
-                lesSlides[indexActuel].classList.add('active');
-            }, 5000);
-        }
-
-        /* --- SCRIPT BOUCLE INFINIE AVIS --- */
-        document.addEventListener("DOMContentLoaded", function() {
-            const marquee = document.getElementById("marquee-content");
-            if(marquee) marquee.innerHTML += marquee.innerHTML; 
-        });
-
-        /* --- SCRIPT D'ANIMATION DES BULLES EN CANVAS --- */
-        document.addEventListener("DOMContentLoaded", function() {
-            const canvas = document.getElementById('bubbleCanvas');
-            if (!canvas) return;
-            
-            const ctx = canvas.getContext('2d');
-            let bubblesArray = [];
-            const BUBBLE_COUNT = 60; // Nombre de bulles générées
-            let scrollY = window.scrollY;
-
-            // Ajuste la taille du canvas à la section
-            function resizeCanvas() {
-                canvas.width = canvas.offsetWidth;
-                canvas.height = canvas.offsetHeight;
-            }
-            window.addEventListener('resize', resizeCanvas);
-            resizeCanvas();
-
-            // Met à jour la position du défilement pour l'effet parallaxe
-            window.addEventListener('scroll', () => {
-                scrollY = window.scrollY;
-            });
-
-            // Définition d'une bulle
-            class Bubble {
-                constructor() {
-                    this.x = Math.random() * canvas.width;
-                    this.y = Math.random() * canvas.height;
-                    this.radius = Math.random() * 12 + 4; // Taille variée
-                    this.baseSpeedY = Math.random() * 1 + 0.5; // Vitesse de remontée
-                    this.parallaxSpeed = this.radius * 0.05; // Plus la bulle est grosse, plus l'effet parallaxe est fort
-                    this.oscillationSpeed = Math.random() * 0.02 + 0.01;
-                    this.angle = Math.random() * Math.PI * 2;
-                }
-                update() {
-                    // Mouvement naturel de la bulle
-                    this.y -= this.baseSpeedY;
-                    this.angle += this.oscillationSpeed;
-                    this.x += Math.sin(this.angle) * 0.5; // Oscillation gauche-droite
-
-                    // Si la bulle sort de l'écran par le haut, on la replace en bas
-                    const currentVisualY = this.y - (scrollY * this.parallaxSpeed);
-                    if (currentVisualY + this.radius < 0) {
-                        this.y = canvas.height + (scrollY * this.parallaxSpeed) + this.radius;
-                        this.x = Math.random() * canvas.width;
-                    }
-                }
-                draw() {
-                    // Calcul de la position finale affichée en tenant compte du défilement
-                    const drawY = this.y - (scrollY * this.parallaxSpeed);
-                    
-                    // N'affiche la bulle que si elle est dans la zone du Canvas (Optimisation)
-                    if (drawY > -this.radius && drawY < canvas.height + this.radius) {
-                        ctx.beginPath();
-                        ctx.arc(this.x, drawY, this.radius, 0, Math.PI * 2);
-                        
-                        // Remplissage semi-transparent
-                        ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
-                        ctx.fill();
-                        
-                        // Bordure de la bulle
-                        ctx.lineWidth = 1;
-                        ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
-                        ctx.stroke();
-                        
-                        // Petit reflet blanc en haut à gauche
-                        ctx.beginPath();
-                        ctx.arc(this.x - this.radius * 0.3, drawY - this.radius * 0.3, this.radius * 0.2, 0, Math.PI * 2);
-                        ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-                        ctx.fill();
-                    }
-                }
-            }
-
-            // Création des bulles
-            function initBubbles() {
-                bubblesArray = [];
-                for (let i = 0; i < BUBBLE_COUNT; i++) {
-                    bubblesArray.push(new Bubble());
-                }
-            }
-
-            // Boucle d'animation principale
-            function animateBubbles() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                for (let i = 0; i < bubblesArray.length; i++) {
-                    bubblesArray[i].update();
-                    bubblesArray[i].draw();
-                }
-                requestAnimationFrame(animateBubbles);
-            }
-
-            initBubbles();
-            animateBubbles();
-        });
-    </script>
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="script_test.js"></script>
 </body>
 </html>
