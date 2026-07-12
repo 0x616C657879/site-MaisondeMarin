@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     
-    /* --- 1. DIAPORAMA HERO (FADE DOUX) --- */
+    /* --- 1. DIAPORAMA HERO (FADE TRÈS DOUX) --- */
     const heroBg = document.getElementById('hero-bg');
+    // Mettez ici les noms exacts de vos plus belles photos romantiques
     const images = [
         'photos/chambre.jpg',
         'photos/spa.jpg',
@@ -11,29 +12,24 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentIndex = 0;
 
     if (heroBg) {
-        // Change l'image toutes les 5 secondes
         setInterval(() => {
             currentIndex = (currentIndex + 1) % images.length;
             heroBg.style.backgroundImage = `url('${images[currentIndex]}')`;
-        }, 5000);
+        }, 5000); // Change d'image toutes les 5 secondes
     }
 
-    /* --- 2. APPARITION AU SCROLL (INTERSECTION OBSERVER) --- */
-    // Sélectionne tous les éléments avec la classe .reveal
+    /* --- 2. APPARITION AU SCROLL ÉLÉGANTE --- */
     const reveals = document.querySelectorAll('.reveal');
 
     const revealOptions = {
-        threshold: 0.15, // Se déclenche quand 15% de l'élément est visible
-        rootMargin: "0px 0px -50px 0px" // Déclenche un peu avant le bas de l'écran
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
     };
 
     const revealOnScroll = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
+            if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // Optionnel : arrête d'observer une fois apparu
                 observer.unobserve(entry.target);
             }
         });

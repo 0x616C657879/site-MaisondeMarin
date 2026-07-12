@@ -1,368 +1,348 @@
-/* --- VARIABLES --- */
+/* --- PALETTE DE COULEURS ROMANTIQUES --- */
 :root {
-    --primary-color: #1a1a1a;       /* Noir doux pour le texte */
-    --secondary-color: #555555;     /* Gris pour les textes secondaires */
-    --accent-color: #C2A67A;        /* Or/Champagne très chic */
-    --bg-color: #FCFAEF;            /* Blanc cassé/Lin très subtil */
-    --bg-light: #F4F1E1;            /* Ton légèrement plus soutenu pour séparer les sections */
+    --color-dark-brown: #3A2A27;    /* Brun profond et chaud pour le texte */
+    --color-text-light: #6E5A57;    /* Brun grisé pour le texte de lecture */
+    --color-bg-light: #FCFAF8;      /* Blanc cassé très chaud / Ivoire */
+    --color-blush: #F7EBE8;         /* Rose poudré très doux pour les fonds */
+    --color-rose-gold: #C5968E;     /* Or rose foncé pour les accents et boutons */
+    --color-gold-light: #DFBAA9;    /* Or rose clair pour les bordures */
     
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Lato', sans-serif;
+    --font-titles: 'Cormorant Garamond', serif; /* Élégance classique */
+    --font-script: 'Great Vibes', cursive;      /* Calligraphie romantique */
+    --font-body: 'Montserrat', sans-serif;      /* Lisibilité épurée */
 }
 
-/* --- RESET --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+/* --- BASES --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
     font-family: var(--font-body);
-    color: var(--primary-color);
-    background-color: var(--bg-color);
-    line-height: 1.6;
+    color: var(--color-text-light);
+    background-color: var(--color-bg-light);
+    line-height: 1.8;
     -webkit-font-smoothing: antialiased;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+h1, h2, h3, h4 {
+    font-family: var(--font-titles);
+    color: var(--color-dark-brown);
+    font-weight: 400;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.text-center { text-align: center; }
+.section-padding { padding: 100px 0; }
+.bg-blush { background-color: var(--color-blush); }
+.text-rose { color: var(--color-rose-gold); }
+
+/* --- TYPOGRAPHIE SPÉCIFIQUE --- */
+.calligraphy-accent {
+    font-family: var(--font-script);
+    font-size: 3rem;
     display: block;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.section-padding {
-    padding: 100px 0;
-}
-
-.bg-light {
-    background-color: var(--bg-light);
-}
-
-/* --- TYPOGRAPHIE --- */
-h1, h2, h3 {
-    font-family: var(--font-heading);
+    margin-bottom: -10px;
     font-weight: 400;
 }
 
 .section-title {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    color: var(--primary-color);
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 25px;
 }
 
-.subtitle {
-    display: block;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--accent-color);
-    margin-bottom: 10px;
+.divider {
+    width: 60px;
+    height: 1px;
+    background-color: var(--color-rose-gold);
+    margin: 0 auto 30px auto;
 }
 
-/* --- BOUTONS --- */
-.btn-primary {
+.lead-text {
+    font-size: 1.15rem;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* --- BOUTONS BIJOUX --- */
+.btn-rose-gold {
     display: inline-block;
-    padding: 18px 40px;
-    background-color: transparent;
-    color: var(--bg-color);
-    border: 1px solid var(--bg-color);
+    padding: 16px 45px;
+    background-color: var(--color-rose-gold);
+    color: #fff;
+    font-family: var(--font-body);
     text-transform: uppercase;
-    text-decoration: none;
     letter-spacing: 2px;
     font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(197, 150, 142, 0.3);
     transition: all 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.4);
 }
 
-.btn-primary:hover {
-    background-color: var(--bg-color);
-    color: var(--primary-color);
+.btn-rose-gold:hover {
+    background-color: var(--color-dark-brown);
+    box-shadow: 0 15px 25px rgba(58, 42, 39, 0.2);
+    transform: translateY(-3px);
 }
 
-/* --- HERO SECTION --- */
+/* --- EN-TÊTE (HERO ROMANTIQUE) --- */
 .hero {
     position: relative;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    color: var(--bg-color);
     overflow: hidden;
+    padding: 20px;
 }
 
 .hero-bg {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-image: url('photos/chambre.jpg'); /* Photo par défaut */
-    background-size: cover;
-    background-position: center;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('photos/chambre.jpg'); /* Votre plus belle photo romantique ici */
+    background-size: cover; background-position: center;
     transition: background-image 2s ease-in-out;
     z-index: 1;
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+/* Assombrit légèrement les bords pour centrer l'attention */
+.hero-vignette {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
     z-index: 2;
 }
 
-.hero-content {
+/* Le fin cadre doré intérieur */
+.hero-frame {
     position: relative;
     z-index: 3;
-    max-width: 800px;
+    width: 100%;
+    max-width: 1200px;
+    height: calc(100vh - 60px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    color: #fff;
     padding: 0 20px;
 }
 
-.hero .badge {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    margin-bottom: 20px;
+.hero-content .calligraphy-accent {
+    color: var(--color-gold-light);
+    font-size: 4rem;
+    margin-bottom: 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .hero h1 {
-    font-size: 4.5rem;
-    line-height: 1.1;
-    margin-bottom: 30px;
-    font-style: italic;
+    font-size: 5rem;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
 .hero p {
     font-size: 1.2rem;
-    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 4px;
     margin-bottom: 40px;
-    letter-spacing: 1px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
-/* --- INTRO SECTION --- */
-.intro {
+/* --- GRILLE EN ARCHES (EXPÉRIENCE) --- */
+.arch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    align-items: center; /* Permet de centrer verticalement */
+}
+
+.arch-card {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    transition: transform 0.5s ease;
 }
 
-.lead-text {
-    font-size: 1.3rem;
-    color: var(--secondary-color);
-    line-height: 1.8;
+.arch-card:hover {
+    transform: translateY(-10px);
 }
 
-/* --- EXPERIENCE (ÉDITORIAL) --- */
-.split-block {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    margin-bottom: 100px;
-}
-
-.split-block:last-child {
-    margin-bottom: 0;
-}
-
-.split-block.reverse {
-    flex-direction: row-reverse;
-}
-
-.block-img {
-    flex: 1;
-    overflow: hidden;
-}
-
-.block-img img {
+/* La forme en arche de l'image */
+.arch-img-container {
     width: 100%;
-    height: 600px;
-    object-fit: cover;
+    aspect-ratio: 2 / 3;
+    border-radius: 200px 200px 0 0; /* Crée l'arche parfaite en haut */
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: 8px solid #fff; /* Cadre blanc autour de l'image */
+    box-shadow: 0 15px 35px rgba(197, 150, 142, 0.15);
+}
+
+.arch-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
     transition: transform 1s ease;
 }
 
-.split-block:hover .block-img img {
-    transform: scale(1.05);
+.arch-card:hover .arch-img {
+    transform: scale(1.08); /* Zoom très lent et chic */
 }
 
-.block-text {
-    flex: 1;
-    padding: 20px;
+.arch-content h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
-.block-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 25px;
-}
-
-.block-text p {
-    font-size: 1.1rem;
-    color: var(--secondary-color);
-}
-
-/* --- TOURISME (GRILLE ÉLÉGANTE) --- */
-.explore-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.explore-item {
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 3/4;
-    cursor: pointer;
-}
-
-.explore-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.8s ease;
-}
-
-.explore-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 20px;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-    color: white;
-    transform: translateY(20px);
-    opacity: 0;
-    transition: all 0.4s ease;
-}
-
-.explore-item:hover img {
-    transform: scale(1.05);
-}
-
-.explore-item:hover .explore-caption {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.explore-caption h3 {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-}
-
-.explore-caption p {
-    font-size: 0.9rem;
-    font-family: var(--font-body);
-}
-
-/* --- TARIFS & RÉSERVATION --- */
-.booking-header {
-    margin-bottom: 60px;
-}
-
-.pricing-card {
-    background: white;
-    padding: 40px;
-    max-width: 600px;
-    margin: 40px auto 0;
-    border: 1px solid #eAE6D5;
-}
-
-.price {
-    margin-bottom: 20px;
-}
-
-.price .from {
-    font-size: 1rem;
-    color: var(--secondary-color);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.price .amount {
-    font-family: var(--font-heading);
-    font-size: 4rem;
-    color: var(--accent-color);
-    margin: 0 10px;
-}
-
-.price .night {
-    font-size: 1.1rem;
-    color: var(--secondary-color);
-    font-style: italic;
-}
-
-.special-offer {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: var(--bg-light);
-    color: var(--primary-color);
+.arch-content p {
     font-size: 0.95rem;
-    border-left: 3px solid var(--accent-color);
 }
 
-.booking-iframe-container {
-    background: white;
-    padding: 20px;
-    border: 1px solid #eAE6D5;
+/* L'arche centrale plus imposante */
+.arch-center {
+    transform: scale(1.05); /* Légèrement plus grande */
+    margin-top: -30px;
 }
+.arch-center:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+/* --- MÉDAILLONS TOURISME --- */
+.medallion-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.medallion-item {
+    width: 220px;
+}
+
+.medallion-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%; /* Image parfaitement ronde */
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+    border: 4px solid var(--color-gold-light);
+    box-shadow: 0 10px 25px rgba(197, 150, 142, 0.2);
+    transition: transform 0.5s ease, border-color 0.5s ease;
+}
+
+.medallion-item:hover .medallion-img {
+    transform: scale(1.05);
+    border-color: var(--color-rose-gold);
+}
+
+.medallion-item h4 {
+    font-size: 1.4rem;
+}
+
+/* --- RÉSERVATION ET OFFRE ROMANTIQUE --- */
+.booking-box {
+    background: #fff;
+    border-radius: 20px;
+    padding: 60px;
+    box-shadow: 0 20px 50px rgba(197, 150, 142, 0.1);
+    position: relative;
+    border: 1px solid var(--color-blush);
+}
+
+.price-elegant {
+    margin: 40px 0;
+}
+
+.price-from {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.price-amount {
+    font-family: var(--font-titles);
+    font-size: 5rem;
+    color: var(--color-rose-gold);
+    line-height: 1;
+}
+
+.romantic-offer {
+    margin: 0 auto 50px auto;
+    max-width: 500px;
+    padding: 5px;
+    background: linear-gradient(135deg, var(--color-rose-gold), var(--color-gold-light));
+    border-radius: 10px;
+}
+
+.offer-border {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--color-dark-brown);
+}
+
+.offer-border strong {
+    color: var(--color-rose-gold);
+    font-size: 1.2rem;
+    font-family: var(--font-titles);
+}
+
+.iframe-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 1px solid var(--color-blush);
+    padding-top: 40px;
+}
+
+#apartmentIframe3411556 { width: 100%; min-height: 550px; display: block; }
+#apartmentIframe3411556 iframe { width: 100% !important; min-height: 550px !important; border: none !important; }
 
 /* --- FOOTER --- */
 footer {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 40px 20px;
+    background-color: var(--color-dark-brown);
+    color: var(--color-bg-light);
+    padding: 60px 20px;
 }
 
 .footer-link {
-    color: #999;
+    color: var(--color-gold-light);
     text-decoration: none;
-    font-size: 0.85rem;
-    margin-top: 10px;
+    font-size: 0.9rem;
+    margin-top: 15px;
     display: inline-block;
+    transition: color 0.3s;
 }
+.footer-link:hover { color: #fff; }
 
-.footer-link:hover {
-    color: white;
-}
-
-/* --- ANIMATIONS D'APPARITION AU SCROLL --- */
+/* --- ANIMATIONS DOUCES --- */
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease-out;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
 }
-
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 900px) {
-    .split-block, .split-block.reverse {
-        flex-direction: column;
-        gap: 30px;
-    }
-    .block-img img {
-        height: 400px;
-    }
-    .explore-grid {
-        grid-template-columns: 1fr;
-    }
-    .hero h1 {
-        font-size: 3rem;
-    }
-    .section-title {
-        font-size: 2.2rem;
-    }
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 950px) {
+    .arch-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
+    .arch-center { transform: scale(1); margin-top: 0; }
+    .arch-center:hover { transform: translateY(-10px); }
+    .hero h1 { font-size: 3.5rem; }
+    .hero-content .calligraphy-accent { font-size: 3rem; }
+    .section-title { font-size: 2.5rem; }
+    .booking-box { padding: 40px 20px; }
 }
