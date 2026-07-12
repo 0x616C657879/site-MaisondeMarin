@@ -67,52 +67,66 @@
             </div>
         </section>
 
-        <section class="section-intro">
-            <h2>Une invitation à la déconnexion</h2>
-            <p class="subtitle">Découvrez le gîte chaleureux de Séverine et Cyril</p>
+        <section class="section-intro premium-immersion">
+    
+        <!-- DÉCORATIONS 3D ÉLÉGANTES (Profondeur) -->
+        <div class="floating-deco deco-flamingo">
+            <model-viewer 
+                src="3D/pink_flamingo_float_3d_model.glb" 
+                alt="Flamant rose" auto-rotate camera-controls
+                style="width: 100%; height: 100%; background-color: transparent;">
+            </model-viewer>
+        </div>
+        
+        <div class="floating-deco deco-cocker">
+            <model-viewer 
+                src="3D/cocker_spaniel.glb" 
+                alt="Notre Cocker" auto-rotate camera-controls
+                style="width: 100%; height: 100%; background-color: transparent;">
+            </model-viewer>
+        </div>
 
-            <div class="grid-features">
-                <div class="feature-card">
+        <h2>Une invitation à la déconnexion</h2>
+        <p class="subtitle">Découvrez le cocon chaleureux de Séverine, Cyril... et de notre fidèle compagnon.</p>
+
+        <!-- LES 3 CARTES CÔTE À CÔTE -->
+        <div class="grid-features three-cols">
+            
+            <!-- CARTE 1 : La Nature -->
+            <div class="elegant-card">
+                <div class="card-img-wrapper">
                     <div class="feature-img" style="background-image: url('photos/vue.jpg');"></div>
-                    <div class="feature-info">
-                        <h3>Vue Magnifique</h3>
-                        <p>Prenez de la hauteur et admirez un panorama exceptionnel sur les collines environnantes, idéal pour décompresser.</p>
-                    </div>
                 </div>
-                
-                <!-- Carte avec le modèle 3D intégré -->
-                <div class="feature-card">
-                    <div class="feature-3d-container">
-                        <model-viewer 
-                            src="3D/pink_flamingo_float_3d_model.glb" 
-                            alt="Bouée Flamant Rose" 
-                            camera-controls 
-                            auto-rotate 
-                            style="width: 100%; height: 100%; background-color: transparent;">
-                        </model-viewer>
-                    </div>
-                    <div class="feature-info">
-                        <h3>La Piscine</h3>
-                        <p>Profitez des belles journées ensoleillées pour plonger ou vous prélasser au bord de notre piscine au calme absolu.</p>
-                    </div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-img" style="background-image: url('photos/spa.jpg');"></div>
-                    <div class="feature-info">
-                        <h3>Espace Spa</h3>
-                        <p>Accordez-vous un instant de bien-être absolu et de relaxation profonde grâce à notre spa privatif haut de gamme.</p>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-img" style="background-image: url('photos/campagne.jpg');"></div>
-                    <div class="feature-info">
-                        <h3>Campagne Tranquille</h3>
-                        <p>Ici, seul le chant des oiseaux rythme vos journées. Un cadre verdoyant préservé, loin du tumulte citadin.</p>
-                    </div>
+                <div class="feature-info">
+                    <h3>Nature & Panorama</h3>
+                    <p>Prenez de la hauteur face à un panorama exceptionnel. Un cadre verdoyant où seul le chant des oiseaux rythme vos douces journées à la campagne.</p>
                 </div>
             </div>
-        </section>
+            
+            <!-- CARTE 2 : L'Eau -->
+            <div class="elegant-card">
+                <div class="card-img-wrapper">
+                    <div class="feature-img" style="background-image: url('photos/piscine_spa.jpg');"></div>
+                </div>
+                <div class="feature-info">
+                    <h3>L'Oasis Bien-Être</h3>
+                    <p>Plongez dans notre piscine baignée de soleil, puis accordez-vous une relaxation profonde dans le spa privatif haut de gamme. Détente absolue garantie.</p>
+                </div>
+            </div>
+
+            <!-- CARTE 3 : L'Accueil -->
+            <div class="elegant-card">
+                <div class="card-img-wrapper">
+                    <div class="feature-img" style="background-image: url('photos/chambre.jpg');"></div>
+                </div>
+                <div class="feature-info">
+                    <h3>Douceur de Vivre</h3>
+                    <p>Un hébergement décoré avec soin, un accueil personnalisé et la compagnie joyeuse de notre mascotte à quatre pattes. Sentez-vous comme à la maison.</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
 
         <section class="section-intro" id="tourisme">
         <h2>Les Trésors du Tarn</h2>

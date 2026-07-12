@@ -1,19 +1,29 @@
-/* --- VARIABLES DE DESIGN PRESTIGE & ROMANTISME --- */
+/* ==========================================================================
+   LA CHAMBRE DE MARIN - FEUILLE DE STYLE COMPLÈTE
+   ========================================================================== */
+
+/* --- 1. VARIABLES DE DESIGN PRESTIGE & ROMANTISME --- */
 :root {
     --font-titles: 'Playfair Display', Georgia, serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
     --color-bg: #fbf9f6;         /* Crème/Sable doux */
     --color-nature: #3a4d39;     /* Vert sauge profond */
-    --color-gold: #c5a880;       /* Or mat */
-    --color-dark: #242924;       /* Anthracite doux */
+    --color-gold: #c5a880;       /* Or mat pour le Spa/Prestige */
+    --color-dark: #242924;       /* Anthracite doux pour le texte */
     --color-white: #ffffff;
     
-    /* Nouvelles teintes romantiques */
-    --color-rose-soft: #fdf5f5;  /* Rose poudré très clair pour les fonds */
+    /* Teintes romantiques */
+    --color-rose-soft: #fdf5f5;   /* Rose poudré très clair pour les fonds */
     --color-rose-accent: #d9a8a8; /* Rose vintage élégant */
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* --- 2. RÉINITIALISATION ET BASE --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
 body { 
     background-color: var(--color-bg); 
     color: var(--color-dark); 
@@ -22,7 +32,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* --- DIAPORAMA DE L'ENTÊTE (HERO) --- */
+/* --- 3. DIAPORAMA DE L'ENTÊTE (HERO) --- */
 .hero {
     position: relative;
     height: 90vh;
@@ -36,19 +46,22 @@ body {
     background-color: #1a1f1a;
     overflow: hidden;
 }
+
 .hero-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+
 .slide {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background-size: cover; background-position: center;
     opacity: 0; transition: opacity 2s ease-in-out;
 }
+
 .slide.active { opacity: 0.55; }
 
 .hero-content { position: relative; z-index: 1; max-width: 800px; }
 .hero h1 { font-family: var(--font-titles); font-size: 4rem; font-weight: 400; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
 .hero p { font-size: 1.3rem; font-weight: 300; margin-bottom: 35px; letter-spacing: 0.5px; text-shadow: 0 2px 5px rgba(0,0,0,0.3); }
 
-/* --- BADGE NOTE 10/10 ÉLÉGANT --- */
+/* --- 4. BOUTONS ET BADGES --- */
 .premium-badge {
     display: inline-flex;
     align-items: center;
@@ -61,6 +74,7 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     border: 1px solid var(--color-gold);
 }
+
 .premium-badge .score {
     background: var(--color-nature);
     color: var(--color-white);
@@ -69,9 +83,9 @@ body {
     padding: 4px 12px;
     border-radius: 25px;
 }
+
 .premium-badge .text { font-size: 0.95rem; text-align: left; font-weight: 600; letter-spacing: 0.3px;}
 
-/* --- BOUTON DE RÉSERVATION DIRECTE --- */
 .btn-gold {
     background-color: var(--color-gold);
     color: var(--color-white);
@@ -85,40 +99,172 @@ body {
     box-shadow: 0 4px 15px rgba(197, 168, 128, 0.4);
     display: inline-block;
 }
-.btn-gold:hover { background-color: #b3946b; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(197, 168, 128, 0.6); }
 
-/* --- SECTION EXPÉRIENCE (PISCINE, SPA, VUE) --- */
-.section-intro { padding: 90px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
-.section-intro h2 { font-family: var(--font-titles); font-size: 2.8rem; color: var(--color-nature); font-weight: 400; margin-bottom: 20px; }
-.section-intro .subtitle { font-size: 1.1rem; color: #666; font-style: italic; margin-bottom: 50px; }
+.btn-gold:hover { 
+    background-color: #b3946b; 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 25px rgba(197, 168, 128, 0.6); 
+}
 
-.grid-features {
+/* --- 5. SECTIONS GÉNÉRALES --- */
+.section-intro { 
+    padding: 90px 20px; 
+    text-align: center; 
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+.section-intro h2 { 
+    font-family: var(--font-titles); 
+    font-size: 2.8rem; 
+    color: var(--color-nature); 
+    font-weight: 400; 
+    margin-bottom: 20px; 
+}
+
+.section-intro .subtitle { 
+    font-size: 1.1rem; 
+    color: #666; 
+    font-style: italic; 
+    margin-bottom: 50px; 
+}
+
+/* --- 6. GRILLES ET CARTES (CLASSIQUES ET PRESTIGE) --- */
+.grid-features, .three-cols {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
     max-width: 1200px;
     margin: 0 auto 50px auto;
     padding: 0 20px;
 }
+
+/* Cartes classiques (utilisées pour la section tourisme) */
 .feature-card {
     background: var(--color-white);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #eee;
 }
-.feature-card:hover { transform: translateY(-5px); }
+
+.feature-card:hover { 
+    transform: translateY(-5px); 
+    border-color: var(--color-rose-accent);
+    box-shadow: 0 10px 25px rgba(217, 168, 168, 0.15);
+}
+
 .feature-img { height: 220px; width: 100%; background-size: cover; background-position: center; background-color: #e9e5df; }
-
-/* Nouveau conteneur pour le modèle 3D */
-.feature-3d-container { height: 220px; width: 100%; background-color: #aed9e0; position: relative; }
-
+.feature-3d-container { height: 220px; width: 100%; background-color: var(--color-rose-soft); position: relative; }
 .feature-info { padding: 25px; text-align: left; }
 .feature-info h3 { font-family: var(--font-titles); font-size: 1.4rem; color: var(--color-nature); margin-bottom: 10px; font-weight: 400;}
 .feature-info p { font-size: 0.95rem; color: #555; }
 
-/* --- SECTION IMMERSION SPA (AVEC CANVAS BULLES) --- */
+/* Cartes Prestige (utilisées pour la section d'introduction) */
+.elegant-card {
+    background: var(--color-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(217, 168, 168, 0.15);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    z-index: 2; 
+    text-align: left;
+}
+
+.elegant-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(197, 168, 128, 0.2);
+    border-color: var(--color-gold);
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 250px;
+    overflow: hidden; 
+}
+
+.elegant-card .feature-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.8s ease; 
+}
+
+.elegant-card:hover .feature-img {
+    transform: scale(1.08); 
+}
+
+.elegant-card .feature-info { padding: 35px 30px; }
+
+.elegant-card h3 {
+    font-family: var(--font-titles);
+    font-size: 1.6rem;
+    color: var(--color-nature);
+    margin-bottom: 15px;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+}
+
+.elegant-card h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 40px;
+    height: 2px;
+    background-color: var(--color-rose-accent);
+    transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.elegant-card:hover h3::after {
+    width: 100%;
+    background-color: var(--color-gold); 
+}
+
+.elegant-card p { font-size: 1rem; color: #666; line-height: 1.6; }
+
+/* --- 7. ÉLÉMENTS 3D FLOTTANTS (EFFET PARALLAXE) --- */
+.premium-immersion { position: relative; }
+
+.floating-deco {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    z-index: 1;
+    opacity: 0.8;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
+    transition: opacity 0.4s ease;
+}
+
+.floating-deco:hover {
+    opacity: 1;
+    z-index: 10; 
+}
+
+.deco-flamingo {
+    top: -20px;
+    right: -50px;
+    animation: floatElegant 8s ease-in-out infinite;
+}
+
+.deco-cocker {
+    top: 55%;
+    left: -60px;
+    animation: floatElegant 10s ease-in-out infinite 2s;
+}
+
+@keyframes floatElegant {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* --- 8. SECTION IMMERSION SPA (CANVAS) --- */
 .spa-immersion {
     position: relative;
     width: 100%;
@@ -133,6 +279,7 @@ body {
     justify-content: center;
     margin: 0;
 }
+
 .spa-immersion::before {
     content: '';
     position: absolute;
@@ -140,15 +287,14 @@ body {
     background: rgba(10, 30, 50, 0.25);
     z-index: 1;
 }
+
 #bubbleCanvas {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     z-index: 2;
     pointer-events: none;
 }
+
 .spa-content {
     position: relative;
     z-index: 10;
@@ -157,18 +303,11 @@ body {
     text-shadow: 0 4px 15px rgba(0,0,0,0.5);
     padding: 20px;
 }
-.spa-content h2 {
-    font-family: var(--font-titles);
-    font-size: 3.5rem;
-    font-weight: 400;
-    margin-bottom: 20px;
-}
-.spa-content p {
-    font-size: 1.3rem;
-    margin-bottom: 40px;
-}
 
-/* --- SECTION AVIS CLIENTS FLUIDE --- */
+.spa-content h2 { font-family: var(--font-titles); font-size: 3.5rem; font-weight: 400; margin-bottom: 20px; }
+.spa-content p { font-size: 1.3rem; margin-bottom: 40px; }
+
+/* --- 9. SECTION AVIS CLIENTS (DÉFILEMENT INFINI) --- */
 .reviews-section { padding: 80px 0; background: var(--color-white); overflow: hidden; border-top: 1px solid #f0edf6; }
 .reviews-section h2 { text-align: center; font-family: var(--font-titles); font-size: 2.5rem; color: var(--color-nature); margin-bottom: 40px; font-weight: 400;}
 
@@ -184,22 +323,18 @@ body {
     background: var(--color-bg); border-radius: 4px; padding: 30px;
     width: 420px; flex-shrink: 0; border-left: 3px solid var(--color-gold);
 }
+
 .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
 .reviewer-name { font-weight: 600; font-size: 1rem; }
 .review-score { color: var(--color-gold); font-weight: 600; font-size: 1.1rem; letter-spacing: 1px; }
 .review-text { font-style: italic; color: #444; font-size: 0.95rem; }
 
-/* --- SECTION RÉSERVATION --- */
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* --- 10. SECTION RÉSERVATION ET TARIFS --- */
 .booking-section { padding: 90px 20px; text-align: center; background: var(--color-bg); }
 .booking-section h2 { font-family: var(--font-titles); font-size: 2.5rem; color: var(--color-nature); margin-bottom: 15px; font-weight: 400; }
-.booking-section p { margin-bottom: 40px; color: #555; }
-.booking-wrapper {
-    max-width: 950px; margin: 0 auto; background: var(--color-white); 
-    padding: 30px; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.04);
-    border: 1px solid #ebdcd0;
-}
 
-/* --- SECTION TARIFS & RÉDUCTIONS --- */
 .pricing-container {
     max-width: 800px;
     margin: 0 auto 40px auto;
@@ -209,18 +344,8 @@ body {
     gap: 20px;
 }
 
-.price-box {
-    font-size: 1.2rem;
-    color: var(--color-dark);
-}
-
-.price-box .amount {
-    font-family: var(--font-titles);
-    font-size: 3rem;
-    color: var(--color-gold);
-    font-weight: 400;
-    margin: 0 10px;
-}
+.price-box { font-size: 1.2rem; color: var(--color-dark); }
+.price-box .amount { font-family: var(--font-titles); font-size: 3rem; color: var(--color-gold); font-weight: 400; margin: 0 10px; }
 
 .discount-banner {
     background-color: var(--color-rose-soft);
@@ -236,36 +361,33 @@ body {
     gap: 10px;
 }
 
-.discount-banner span {
-    color: var(--color-rose-accent);
-    font-size: 1.3rem;
+.discount-banner span { color: var(--color-rose-accent); font-size: 1.3rem; }
+
+.booking-wrapper {
+    max-width: 950px; margin: 0 auto; background: var(--color-white); 
+    padding: 30px; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+    border: 1px solid #ebdcd0;
 }
 
-/* Optionnel : petite touche rose au survol des cartes */
-.feature-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-rose-accent);
-    box-shadow: 0 10px 25px rgba(217, 168, 168, 0.15);
+#apartmentIframe3411556 { width: 100%; min-height: 550px; display: block; }
+#apartmentIframe3411556 iframe { width: 100% !important; min-height: 550px !important; border: none !important; }
+
+/* --- 11. RESPONSIVE (MOBILES ET TABLETTES) --- */
+@media (max-width: 1024px) {
+    .grid-features, .three-cols { 
+        grid-template-columns: 1fr; 
+        max-width: 500px;
+    }
+    .floating-deco { 
+        display: none; /* Cache les objets 3D pour éviter la surcharge sur mobile */
+    }
 }
 
-@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.6rem; }
     .hero p { font-size: 1.1rem; }
     .section-intro h2, .reviews-section h2, .booking-section h2 { font-size: 2rem; }
     .spa-content h2 { font-size: 2.2rem; }
     .review-card { width: 310px; padding: 20px; }
-}
-#apartmentIframe3411556 {
-    width: 100%;
-    min-height: 550px;
-    display: block;
-}
-
-#apartmentIframe3411556 iframe {
-    width: 100% !important;
-    min-height: 550px !important;
-    border: none !important;
+    .discount-banner { font-size: 0.95rem; padding: 12px 20px; text-align: center; flex-direction: column;}
 }
