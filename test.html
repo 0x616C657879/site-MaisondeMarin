@@ -114,6 +114,62 @@
             </div>
         </section>
 
+        <section class="section-intro" id="tourisme">
+        <h2>Les Trésors du Tarn</h2>
+        <p class="subtitle">Découvrez un patrimoine exceptionnel à quelques minutes du gîte.</p>
+
+        <div class="grid-features">
+            <!-- Carte Albi -->
+            <div class="feature-card">
+                <div class="feature-3d-container" style="background-color: var(--color-rose-soft);">
+                    <!-- Remplacez le src par le lien de votre modèle 3D d'Albi quand vous l'aurez -->
+                    <model-viewer 
+                        src="3D/albi.glb" 
+                        alt="Cathédrale d'Albi" 
+                        camera-controls auto-rotate 
+                        style="width: 100%; height: 100%; background-color: transparent;">
+                    </model-viewer>
+                </div>
+                <div class="feature-info">
+                    <h3>Albi & l'UNESCO</h3>
+                    <p>Laissez-vous éblouir par la majestueuse cathédrale Sainte-Cécile de briques rouges et le palais de la Berbie.</p>
+                </div>
+            </div>
+            
+            <!-- Carte Lautrec -->
+            <div class="feature-card">
+                <div class="feature-3d-container" style="background-color: var(--color-rose-soft);">
+                    <model-viewer 
+                        src="3D/lautrec.glb" 
+                        alt="Village de Lautrec" 
+                        camera-controls auto-rotate 
+                        style="width: 100%; height: 100%; background-color: transparent;">
+                    </model-viewer>
+                </div>
+                <div class="feature-info">
+                    <h3>Lautrec</h3>
+                    <p>Classé parmi les Plus Beaux Villages de France, célèbre pour ses ruelles pittoresques et son ail rose.</p>
+                </div>
+            </div>
+
+            <!-- Carte Cordes-sur-Ciel -->
+            <div class="feature-card">
+                <div class="feature-3d-container" style="background-color: var(--color-rose-soft);">
+                    <model-viewer 
+                        src="3D/cordes.glb" 
+                        alt="Cordes sur Ciel" 
+                        camera-controls auto-rotate 
+                        style="width: 100%; height: 100%; background-color: transparent;">
+                    </model-viewer>
+                </div>
+                <div class="feature-info">
+                    <h3>Cordes-sur-Ciel</h3>
+                    <p>Un joyau médiéval perché au-dessus des nuages. Une balade hors du temps, élue Village Préféré des Français.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
         <section class="spa-immersion">
             <canvas id="bubbleCanvas"></canvas>
             <div class="spa-content">
@@ -157,15 +213,25 @@
         </section>
 
         <section id="reservation" class="booking-section">
-            <h2>Sélectionnez vos dates</h2>
-            <p>Meilleur tarif garanti et aucun frais de dossier en réservant directement sur notre site.</p>
-            <div class="booking-wrapper">
-                <div id="apartmentIframe3411556">
-                <script type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
-                <script>BookingToolIframe.initialize({"url": "https://login.smoobu.com/fr/booking-tool/iframe/1814371/3411556", "baseUrl": "https://login.smoobu.com", "target": "#apartmentIframe3411556"})</script>
-                </div>
-            </div>
-        </section>
+    <h2>Réservez votre Séjour</h2>
+    
+    <div class="pricing-container">
+        <div class="price-box">
+            À partir de <span class="amount">120€</span> / nuit
+        </div>
+        
+        <div class="discount-banner">
+            <span>♥</span> Offre romantique : -10% de réduction pour toute réservation d'une semaine (7 nuits)
+        </div>
+    </div>
+
+    <div class="booking-wrapper">
+        <div id="apartmentIframe3411556">
+            <script type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+            <script>BookingToolIframe.initialize({"url": "https://login.smoobu.com/fr/booking-tool/iframe/1814371/3411556", "baseUrl": "https://login.smoobu.com", "target": "#apartmentIframe3411556"})</script>
+        </div>
+    </div>
+</section>
         
         <footer style="text-align: center; padding: 40px 20px; font-size: 0.9rem; margin-top: 40px; border-top: 1px solid #ebdcd0;">
             <a href="cgv_confidentialite.html" style="color: #666; text-decoration: none; transition: color 0.3s;">

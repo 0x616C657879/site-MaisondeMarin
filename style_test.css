@@ -1,12 +1,16 @@
-/* --- VARIABLES DE DESIGN PRESTIGE --- */
+/* --- VARIABLES DE DESIGN PRESTIGE & ROMANTISME --- */
 :root {
     --font-titles: 'Playfair Display', Georgia, serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
     --color-bg: #fbf9f6;         /* Crème/Sable doux */
     --color-nature: #3a4d39;     /* Vert sauge profond */
-    --color-gold: #c5a880;       /* Or mat pour le Spa/Prestige */
-    --color-dark: #242924;       /* Anthracite doux pour le texte */
+    --color-gold: #c5a880;       /* Or mat */
+    --color-dark: #242924;       /* Anthracite doux */
     --color-white: #ffffff;
+    
+    /* Nouvelles teintes romantiques */
+    --color-rose-soft: #fdf5f5;  /* Rose poudré très clair pour les fonds */
+    --color-rose-accent: #d9a8a8; /* Rose vintage élégant */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -193,6 +197,55 @@ body {
     max-width: 950px; margin: 0 auto; background: var(--color-white); 
     padding: 30px; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.04);
     border: 1px solid #ebdcd0;
+}
+
+/* --- SECTION TARIFS & RÉDUCTIONS --- */
+.pricing-container {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.price-box {
+    font-size: 1.2rem;
+    color: var(--color-dark);
+}
+
+.price-box .amount {
+    font-family: var(--font-titles);
+    font-size: 3rem;
+    color: var(--color-gold);
+    font-weight: 400;
+    margin: 0 10px;
+}
+
+.discount-banner {
+    background-color: var(--color-rose-soft);
+    border: 1px solid var(--color-rose-accent);
+    color: var(--color-dark);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 15px rgba(217, 168, 168, 0.15);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.discount-banner span {
+    color: var(--color-rose-accent);
+    font-size: 1.3rem;
+}
+
+/* Optionnel : petite touche rose au survol des cartes */
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-rose-accent);
+    box-shadow: 0 10px 25px rgba(217, 168, 168, 0.15);
 }
 
 @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
