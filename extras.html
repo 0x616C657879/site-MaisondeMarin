@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Extras | La Chambre de Marin</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- VARIABLES DE DESIGN ROMANTIQUE --- */
+        :root {
+            --font-titles: 'Playfair Display', Georgia, serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --color-bg: #fdf7f8;
+            --color-primary: #ab5d70;
+            --color-gold: #d4af37;
+            --color-dark: #3a2e31;
+            --color-white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--color-bg); 
+            color: var(--color-dark); 
+            font-family: var(--font-body);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- EN-TÊTE --- */
+        .header-extras {
+            text-align: center;
+            padding: 80px 20px 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header-extras h1 {
+            font-family: var(--font-titles);
+            font-size: 3.5rem;
+            color: var(--color-primary);
+            font-weight: 400;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .header-extras p {
+            font-size: 1.1rem;
+            color: #886a73;
+        }
+
+        /* --- GRILLE DES PRODUITS --- */
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background: var(--color-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(171, 93, 112, 0.05);
+            border: 1px solid #f7e6ea;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            height: 250px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-color: #f0e6e8; /* Couleur de fond si l'image ne charge pas */
+        }
+
+        .product-info {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            font-family: var(--font-titles);
+            font-size: 1.8rem;
+            color: var(--color-dark);
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .product-info p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .product-price {
+            font-size: 1.4rem;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* --- BOUTON STRIPE --- */
+        .btn-stripe {
+            background-color: var(--color-gold);
+            color: var(--color-white);
+            padding: 14px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 30px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            display: inline-block;
+            width: 100%;
+        }
+        .btn-stripe:hover {
+            background-color: #be9d32;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- BOUTON RETOUR --- */
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #886a73;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .back-link:hover {
+            color: var(--color-primary);
+        }
+
+        @media (max-width: 768px) {
+            .header-extras h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <header class="header-extras">
+            <h1>Sublimez votre séjour</h1>
+            <p>Ajoutez une touche de magie à votre arrivée. Sélectionnez vos attentions particulières, elles vous attendront dans votre chambre.</p>
+        </header>
+
+        <section class="products-container">
+            
+            <!-- PRODUIT 1 : VIN BLANC -->
+            <div class="product-card">
+                <!-- Remplacez l'URL par la photo de votre bouteille -->
+                <div class="product-img" style="background-image: url('photos/vin-blanc.jpg');"></div>
+                <div class="product-info">
+                    <h3>Vin Blanc Frais</h3>
+                    <p>Une bouteille de vin blanc de Gaillac, fraîchement conservée au réfrigérateur pour votre arrivée. Notes fruitées et élégantes.</p>
+                    <div class="product-price">18 €</div>
+                    <!-- LIEN STRIPE À INSÉRER ICI -->
+                    <a href="VOTRE_LIEN_STRIPE_ICI" class="btn-stripe" target="_blank">Ajouter & Payer</a>
+                </div>
+            </div>
+
+            <!-- PRODUIT 2 : VIN ROUGE -->
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('photos/vin-rouge.jpg');"></div>
+                <div class="product-info">
+                    <h3>Vin Rouge du Terroir</h3>
+                    <p>Découvrez les saveurs de notre région avec ce délicieux vin rouge local, parfait pour accompagner votre soirée romantique.</p>
+                    <div class="product-price">20 €</div>
+                    <!-- LIEN STRIPE À INSÉRER ICI -->
+                    <a href="VOTRE_LIEN_STRIPE_ICI" class="btn-stripe" target="_blank">Ajouter & Payer</a>
+                </div>
+            </div>
+
+            <!-- PRODUIT 3 : CHAMPAGNE -->
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('photos/champagne.jpg');"></div>
+                <div class="product-info">
+                    <h3>Bouteille de Champagne</h3>
+                    <p>L'incontournable pour célébrer une occasion spéciale. Une bouteille de Champagne servie fraîche avec ses flûtes.</p>
+                    <div class="product-price">45 €</div>
+                    <!-- LIEN STRIPE À INSÉRER ICI -->
+                    <a href="VOTRE_LIEN_STRIPE_ICI" class="btn-stripe" target="_blank">Ajouter & Payer</a>
+                </div>
+            </div>
+
+            <!-- PRODUIT 4 : BOUQUET (Optionnel) -->
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('photos/fleurs.jpg');"></div>
+                <div class="product-info">
+                    <h3>Bouquet de Roses</h3>
+                    <p>Une magnifique surprise pour votre moitié. Un bouquet de fleurs fraîches disposé sur le lit à votre arrivée.</p>
+                    <div class="product-price">35 €</div>
+                    <!-- LIEN STRIPE À INSÉRER ICI -->
+                    <a href="VOTRE_LIEN_STRIPE_ICI" class="btn-stripe" target="_blank">Ajouter & Payer</a>
+                </div>
+            </div>
+
+        </section>
+
+        <a href="index.html" class="back-link">← Retour à l'accueil du gîte</a>
+
+    </main>
+
+</body>
+</html>
